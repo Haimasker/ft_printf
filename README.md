@@ -43,7 +43,7 @@ The ``libft`` subdirectory is another project for School 21: [Libft](https://git
 <a name="description"></a>
 ## Description
 
-* The ``printf()`` function produce output according to a format as described below. <br>
+* The ``printf()`` function produces output according to a format as described below. <br>
 The format string is a character string, beginning and ending in its initial shift state, if any. <br>
 The format string is composed of zero or more directives: ordinary characters (not `%`), which <br>
 are copied unchanged to the output stream; and conversion specifications, each of which results <br>
@@ -80,19 +80,19 @@ zero or more flags, an optional minimum field width, an optional precision and a
 
 ``ft_printf()`` must manage following format specifiers and minimum field width in any combination:
 
-1. ``-`` - left-justify within the given field width, right justification is the default;
+1. ``-`` - left-justify within the given field width, right justification is the default
 
-2. ``0`` - left-pads the number with zeroes instead of spaces, where padding is specified;
+2. ``0`` - left-pads the number with zeroes instead of spaces, where padding is specified
 
-3. ``.`` - precision (is used with numeric values):
+3. ``.`` - precision (is used with numeric values)
   
-4. ``#`` - adding prefix `0x` or `0X` for ``%x`` or ``%X`` type specifiers respectively;
+4. ``#`` - adding prefix `0x` or `0X` for ``%x`` or ``%X`` type specifiers respectively
 
 5. ``+`` - adding sign (`+` or `-`) in dependency of output value. By default shows only `-` sign <br>
-for negative values;
+for negative values
 
 6. `` ``  (space) - adding space before positive output values. By default shows only `-` sign <br>
-for negative values. Ignored if both `+` and ` ` flags are used.
+for negative values. Ignored if both `+` and ` ` flags are used
 
 * Also you can use width specifier (number) to define the field width. 
 
