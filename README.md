@@ -39,6 +39,17 @@ Main requirements, rules and code style: [`Norm`](en_norm.pdf).
 <a name="description"></a>
 ## Description
 
+* The ``printf()`` function produce output according to a format as described below. <br>
+The format string is a character string, beginning and ending in its initial shift state, if any. <br>
+The format string is composed of zero or more directives: ordinary characters (not `%`), which <br>
+are copied unchanged to the output stream; and conversion specifications, each of which results <br>
+in fetching zero or more subsequent arguments.  Each conversion specification is introduced by <br>
+the character `%`, and ends with a conversion specifier. In between there may be (in this order) <br>
+zero or more flags, an optional minimum field width, an optional precision and an optional length modifier.
+
+*  The overall syntax of a conversion specification is: <br>
+``%[$][flags][width][.precision][length modifier]conversion``
+
 ### Mandatory part
 
 ft_printf must process following type specifiers:
@@ -69,31 +80,29 @@ ft_printf must manage following format specifiers (and any combinations of them)
 
 2. ``0`` - left-pads the number with zeroes instead of spaces, where padding is specified;
 
-3. ``.`` - precision (is used with numeric value):
-
-   * ``%c`` - precision is ignored;
-   
-   * ``%d``, ``%i``, ``%u``, ``%x``, ``%X`` - precision determines the minimum number of displayed digits. <br>
-    If the number of digits in the argument is less than the precision value, the output value is left-padded <br>
-    with zeros. The value is not truncated if the number is higher precision digits. Default value = 1;
+3. ``.`` - precision (is used with numeric values):
   
-    * ``%s`` - precision determines the maximum number of displayed characters. <br>
-    The string is not truncated if the number is higher precision digits;
-  
-4. ``#`` - adding prefix '0x' or '0X' for %x or %X type specifiers respectively;
+4. ``#`` - adding prefix `0x` or `0X` for ``%x`` or ``%X`` type specifiers respectively;
 
-5. ``+`` - adding sign ('+' or '-') in dependency of output value. By default shows only '-' sign <br>
+5. ``+`` - adding sign (`+` or `-`) in dependency of output value. By default shows only `-` sign <br>
 for negative values;
 
-6. `` ``  (space) - adding space before positive output values. By default shows only '-' sign <br>
-for negative values. Ignored if both '+' and ' ' flags are used.
+6. `` ``  (space) - adding space before positive output values. By default shows only `-` sign <br>
+for negative values. Ignored if both `+` and ` ` flags are used.
 
-+ Also you can use width specifier (number) to define the field width. 
+* Also you can use width specifier (number) to define the field width. 
 
-+ Width and precision specifiers can be presented due to '*' character. <br>
-In this case '*' should be printed in formatting string for ft_printf at required position instead of <br>
-numeric value. At the same time value for '*' is passed as argument.
+* Width and precision specifiers can be presented due to `*` character. <br>
+In this case `*` should be printed in formatting string for ft_printf at required position instead of <br>
+numeric value. At the same time value for `*` is passed as argument.
   
+---
+
+<a name="examples"></a>
+## Examples
+
+
+
 ---
 
 <a name="installation"></a>
