@@ -16,7 +16,9 @@
 <h3 align="center">
 	<a href="#preamble">Preamble</a>
 	<span> · </span>
-  <a href="#description">Description</a>
+  	<a href="#description">Description</a>
+	<span> · </span>
+	<a href="#examples">Examples</a>
 	<span> · </span>
 	<a href="#installation">Installation and usage</a>
 	<span> · </span>
@@ -30,9 +32,11 @@
 
 The purpose of this project is to recode printf function in c.
 
-You can see the subject here: [`ft_printf`](en.subject.pdf).
+You can see the subject here: [ft_printf](en.subject.pdf).
 
-Main requirements, rules and code style: [`Norm`](en_norm.pdf).
+Main requirements, rules and code style: [Norm](en_norm.pdf).
+
+The ``libft`` subdirectory is another project for School 21: [Libft](https://github.com/Haimasker/Libft).
 
 ---
 
@@ -48,11 +52,11 @@ the character `%`, and ends with a conversion specifier. In between there may be
 zero or more flags, an optional minimum field width, an optional precision and an optional length modifier.
 
 *  The overall syntax of a conversion specification is: <br>
-``%[$][flags][width][.precision][length modifier]conversion``
+``%[flags][width][.precision][length modifier][conversion]``
 
 ### Mandatory part
 
-ft_printf must process following type specifiers:
+``ft_printf()`` must process following type specifiers:
 
 1. ``%c`` - single character
 
@@ -66,15 +70,15 @@ ft_printf must process following type specifiers:
 
 6. ``%u`` - unsigned decimal number
 
-7. ``%x`` - number in hexadecimal form (lowercase)
+7. ``%x`` - number in hexadecimal (lowercase)
 
-8. ``%X`` - number in hexadecimal form (uppercase)
+8. ``%X`` - number in hexadecimal (uppercase)
 
 9. ``%%`` - percent character
 
 ### Bonus part
 
-ft_printf must manage following format specifiers (and any combinations of them):
+``ft_printf()`` must manage following format specifiers and minimum field width in any combination:
 
 1. ``-`` - left-justify within the given field width, right justification is the default;
 
@@ -95,13 +99,32 @@ for negative values. Ignored if both `+` and ` ` flags are used.
 * Width and precision specifiers can be presented due to `*` character. <br>
 In this case `*` should be printed in formatting string for ft_printf at required position instead of <br>
 numeric value. At the same time value for `*` is passed as argument.
+
+* For futher information about ``printf()`` read the [manual](https://man7.org/linux/man-pages/man3/printf.3.html) or [wiki](https://en.wikipedia.org/wiki/Printf_format_string).
   
 ---
 
 <a name="examples"></a>
 ## Examples
 
+* ``_`` are showing spaces in output.
 
+| Command                       | Output         |
+| ----------------------------- | -------------- |
+| ft_printf("%3d", 1)           | ``__1``        |
+| ft_printf("%3d", 123456789)   | ``123456789``  |
+| ft_printf("%3d", -1)          | ``_-1``        |
+| ft_printf("%-3d", 1)          | ``1__``        |
+| ft_printf("%-3d", 123456789)  | ``123456789``  |
+| ft_printf("%-3d", -1)         | ``-1_``        |
+| ft_printf("%03d", 1)          | ``001``        |
+| ft_printf("%03d", 123456789)  | ``123456789``  |
+| ft_printf("%03d", -1)         | ``-01``        |
+| ft_printf("%+5d", 10)         | ``__+10``      |
+| ft_printf("%-+5d", 10)        | ``+10__``      |
+| ft_printf("%s", "Hello")      | ``Hello``      |
+| ft_printf("%10s", "Hello")    | ``_____Hello`` |
+| ft_printf("%-10s", "Hello")   | ``Hello_____`` |
 
 ---
 
@@ -119,27 +142,29 @@ Flags: `-Wall` `-Werror` `-Wextra`
 * Go to the project folder:
 
 ```shell
-$ cd 'path_to_libft'
+$ cd 'path_to_ft_printf'
 ```
 * Then typo one of these command:
 
 | Command         | Description                        |
 | --------------- | ---------------------------------- |
-| ``make``        | compiling mandatory part           |
+| ``make``        | compiling mandatory and bonus part |
 | ``make bonus``  | compiling mandatory and bonus part |
 | ``make clean``  | clearing all .o files              |
 | ``make fclean`` | clearing all .o files and library  |
 
+* As you can see ``make`` and ``make bonus`` have the same behavior.
+
 * To use compiled project in your code just include library header:
 
 ```c
-#include "libft.h"
+#include "ft_printf.h"
 ```
 
 * While compiling your code add these flags:
 
 ```shell
--lft -L 'path_to_libft.a' -I 'path_to_libft.h'
+-lft -L 'path_to_libftprintf.a' -I 'path_to_ft_printf.h'
 ```
 
 ---
@@ -149,10 +174,10 @@ $ cd 'path_to_libft'
 
 * You can check code norm due to [norminette](https://github.com/42School/norminette).
 
-* These are some testers for libft project:
+* These are some testers for ft_printf project:
 
-	* [libftTester](https://github.com/Tripouille/libftTester)
+	* [printfTester](https://github.com/Tripouille/printfTester)
 
-	* [Libftest](https://github.com/jtoty/Libftest)
+	* [PFT](https://github.com/gavinfielder/pft)
 
-	* [libft-war-machine](https://github.com/y3ll0w42/libft-war-machine)
+	* [ftprintfdestructor](https://github.com/t0mm4rx/ftprintfdestructor)
