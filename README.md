@@ -174,7 +174,7 @@ $ cd 'path_to_ft_printf'
 
 * You can check code norm due to [norminette](https://github.com/42School/norminette).
 
-* These are some testers for ft_printf project:
+* These are some testers for ``ft_printf`` project:
 
 	* [printfTester](https://github.com/Tripouille/printfTester)
 
