@@ -107,7 +107,7 @@ numeric value. At the same time value for `*` is passed as argument.
 <a name="examples"></a>
 ## Examples
 
-* ``_`` are showing spaces in output.
+* ``_`` is showing spaces in output.
 
 | Command                       | Output         |
 | ----------------------------- | -------------- |
